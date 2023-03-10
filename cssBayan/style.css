@@ -3,7 +3,11 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  background-color: #f5f5f5;
+  background-color: #e0e0e0;
+}
+
+body {
+  width: 100%;
 }
 
 .container {
@@ -13,8 +17,8 @@
 }
 
 .header {
-  font-size: 38px;
-  margin: 50px 0 20px 10px;
+  margin: 30px 0 15px 10px;
+  font-size: 1.8rem;
 }
 
 .accordeon {
@@ -32,7 +36,7 @@
 }
 
 .accordeon-label {
-  border-top: 1px solid #acacac;
+  border-top: 1px solid #b6b6b6;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -43,12 +47,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 22px;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
 .label-title {
-  color: blue;
+  color: #2907be;
 }
 
 .label-icon {
@@ -79,14 +83,14 @@
 
 .accordeon-input:hover ~ .accordeon-img {
   transform: scale(1, 1);
-  height: 300px;
+  height: 35vh;
   padding-bottom: 15px;
   opacity: 1;
 }
 
 .accordeon-input:checked ~ .accordeon-img {
   transform: scale(1, 1);
-  height: 300px;
+  height: 35vh;
   padding-bottom: 15px;
   opacity: 1;
 }
