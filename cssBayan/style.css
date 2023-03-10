@@ -13,16 +13,96 @@
 }
 
 .header {
-  font-size: 42px;
-  margin: 50px 0 20px 0;
+  font-size: 38px;
+  margin: 50px 0 20px 10px;
 }
 
 .accordeon {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+}
+
+.accordeon:hover .label-title {
+  color: #000;
+}
+
+.accordeon:hover .label-icon {
+  opacity: 1;
+}
+
+.accordeon-label {
+  border-top: 1px solid #acacac;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.label-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.label-title {
+  color: blue;
+}
+
+.label-icon {
+  height: 25px;
+  transition: transform 0.2s;
+  opacity: 0;
 }
 
 .accordeon-input {
   all: unset;
-  border-top: 1px solid #dfdfdf;
+}
+
+.accordeon-input:hover + .label-wrapper > .label-title {
+  color: #000;
+}
+
+.accordeon-input:checked + .label-wrapper > .label-title {
+  color: #000;
+}
+
+.accordeon-input:hover + .label-wrapper > .label-icon {
+  transform: rotate(45deg);
+}
+
+.accordeon-input:checked + .label-wrapper > .label-icon {
+  transform: rotate(45deg);
+}
+
+.accordeon-input:hover ~ .accordeon-img {
+  transform: scale(1, 1);
+  height: 300px;
+  padding-bottom: 15px;
+  opacity: 1;
+}
+
+.accordeon-input:checked ~ .accordeon-img {
+  transform: scale(1, 1);
+  height: 300px;
+  padding-bottom: 15px;
+  opacity: 1;
+}
+
+.accordeon-input:active ~ * {
+  opacity: 0.4;
+}
+
+.accordeon-input:active ~ .accordeon-img {
+  opacity: 0.4;
+}
+
+.accordeon-img {
+  margin: 0 auto;
+  height: 0;
+  transform: scale(0, 0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s, padding-bottom 0.5s, height 0.5s;
 }
