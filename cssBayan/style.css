@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  background-color: #e0e0e0;
+}
+
+body {
+  width: 100%;
+  font-size: 2vh;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  font-family: Gill Sans Bold, sans-serif;
+}
+
+.header {
+  margin: 2vh 0 1vh 10px;
+}
+
+.accordeon {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.accordeon:hover .label-title {
+  color: #000;
+}
+
+.accordeon:hover .label-icon {
+  opacity: 1;
+}
+
+.accordeon-label {
+  border-top: 1px solid #b6b6b6;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.label-wrapper {
+  padding: 1vh 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.label-title {
+  color: #2907be;
+}
+
+.label-icon {
+  height: 2vh;
+  transition: transform 0.2s;
+  opacity: 0;
+}
+
+.accordeon-input {
+  all: unset;
+}
+
+.accordeon-input:hover + .label-wrapper > .label-title,
+.accordeon-input:checked + .label-wrapper > .label-title {
+  color: #000;
+}
+
+.accordeon-input:hover + .label-wrapper > .label-icon,
+.accordeon-input:checked + .label-wrapper > .label-icon {
+  transform: rotate(45deg);
+}
+
+.accordeon-input:hover ~ .accordeon-img,
+.accordeon-input:checked ~ .accordeon-img {
+  transform: scale(1, 1);
+  height: 37vh;
+  padding-bottom: 1vh;
+  opacity: 1;
+}
+
+.accordeon-input:active ~ *,
+.accordeon-input:active ~ .accordeon-img {
+  opacity: 0.4;
+}
+
+.accordeon-img {
+  margin: 0 auto;
+  height: 0;
+  transform: scale(0, 0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s, padding-bottom 0.5s, height 0.5s;
+}
